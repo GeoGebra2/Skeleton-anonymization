@@ -1,0 +1,206 @@
+(Skeleton) chenzhuoyan@qwe-AS-4125GS-TNRT:~/Skeleton-anonymization/model/Temporal_shift$ bash run.sh
+running install
+/home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/setuptools/_distutils/cmd.py:90: SetuptoolsDeprecationWarning: setup.py install is deprecated.
+!!
+
+        ********************************************************************************
+        Please avoid running ``setup.py`` directly.
+        Instead, use pypa/build, pypa/installer or other
+        standards-based tools.
+
+        This deprecation is overdue, please update your project and remove deprecated
+        calls to avoid build errors in the future.
+
+        See https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html for details.
+        ********************************************************************************
+
+!!
+  self.initialize_options()
+running build
+running build_ext
+W0221 20:13:50.441000 720033 site-packages/torch/utils/cpp_extension.py:525] The detected CUDA version (12.0) has a minor version mismatch with the version that was used to compile PyTorch (12.8). Most likely this shouldn't be a problem.
+W0221 20:13:50.441000 720033 site-packages/torch/utils/cpp_extension.py:535] There are no g++ version bounds defined for CUDA version 12.0
+building 'shift_cuda' extension
+creating /home/chenzhuoyan/Skeleton-anonymization/model/Temporal_shift/cuda/build/temp.linux-x86_64-cpython-311
+[1/2] /usr/bin/nvcc --generate-dependencies-with-compile --dependency-output /home/chenzhuoyan/Skeleton-anonymization/model/Temporal_shift/cuda/build/temp.linux-x86_64-cpython-311/shift_cuda_kernel.o.d -I/home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/torch/include -I/home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/torch/include/torch/csrc/api/include -I/home/chenzhuoyan/.conda/envs/Skeleton/include/python3.11 -c -c /home/chenzhuoyan/Skeleton-anonymization/model/Temporal_shift/cuda/shift_cuda_kernel.cu -o /home/chenzhuoyan/Skeleton-anonymization/model/Temporal_shift/cuda/build/temp.linux-x86_64-cpython-311/shift_cuda_kernel.o -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr --compiler-options ''"'"'-fPIC'"'"'' -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=shift_cuda -gencode=arch=compute_89,code=compute_89 -gencode=arch=compute_89,code=sm_89 -std=c++17
+FAILED: /home/chenzhuoyan/Skeleton-anonymization/model/Temporal_shift/cuda/build/temp.linux-x86_64-cpython-311/shift_cuda_kernel.o
+/usr/bin/nvcc --generate-dependencies-with-compile --dependency-output /home/chenzhuoyan/Skeleton-anonymization/model/Temporal_shift/cuda/build/temp.linux-x86_64-cpython-311/shift_cuda_kernel.o.d -I/home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/torch/include -I/home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/torch/include/torch/csrc/api/include -I/home/chenzhuoyan/.conda/envs/Skeleton/include/python3.11 -c -c /home/chenzhuoyan/Skeleton-anonymization/model/Temporal_shift/cuda/shift_cuda_kernel.cu -o /home/chenzhuoyan/Skeleton-anonymization/model/Temporal_shift/cuda/build/temp.linux-x86_64-cpython-311/shift_cuda_kernel.o -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr --compiler-options ''"'"'-fPIC'"'"'' -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=shift_cuda -gencode=arch=compute_89,code=compute_89 -gencode=arch=compute_89,code=sm_89 -std=c++17
+/home/chenzhuoyan/Skeleton-anonymization/model/Temporal_shift/cuda/shift_cuda_kernel.cu(413): error: no suitable conversion function from "const at::DeprecatedTypeProperties" to "c10::ScalarType" exists
+
+/home/chenzhuoyan/Skeleton-anonymization/model/Temporal_shift/cuda/shift_cuda_kernel.cu(450): error: no suitable conversion function from "const at::DeprecatedTypeProperties" to "c10::ScalarType" exists
+
+/home/chenzhuoyan/Skeleton-anonymization/model/Temporal_shift/cuda/shift_cuda_kernel.cu(464): error: no suitable conversion function from "const at::DeprecatedTypeProperties" to "c10::ScalarType" exists
+
+/home/chenzhuoyan/Skeleton-anonymization/model/Temporal_shift/cuda/shift_cuda_kernel.cu(485): error: no suitable conversion function from "const at::DeprecatedTypeProperties" to "c10::ScalarType" exists
+
+/home/chenzhuoyan/Skeleton-anonymization/model/Temporal_shift/cuda/shift_cuda_kernel.cu(515): error: no suitable conversion function from "const at::DeprecatedTypeProperties" to "c10::ScalarType" exists
+
+5 errors detected in the compilation of "/home/chenzhuoyan/Skeleton-anonymization/model/Temporal_shift/cuda/shift_cuda_kernel.cu".
+[2/2] c++ -MMD -MF /home/chenzhuoyan/Skeleton-anonymization/model/Temporal_shift/cuda/build/temp.linux-x86_64-cpython-311/shift_cuda.o.d -pthread -B /home/chenzhuoyan/.conda/envs/Skeleton/compiler_compat -DNDEBUG -fwrapv -O2 -Wall -fPIC -O2 -isystem /home/chenzhuoyan/.conda/envs/Skeleton/include -fPIC -O2 -isystem /home/chenzhuoyan/.conda/envs/Skeleton/include -fPIC -I/home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/torch/include -I/home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/torch/include/torch/csrc/api/include -I/home/chenzhuoyan/.conda/envs/Skeleton/include/python3.11 -c -c /home/chenzhuoyan/Skeleton-anonymization/model/Temporal_shift/cuda/shift_cuda.cpp -o /home/chenzhuoyan/Skeleton-anonymization/model/Temporal_shift/cuda/build/temp.linux-x86_64-cpython-311/shift_cuda.o -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=shift_cuda -std=c++17
+In file included from /home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/torch/include/c10/core/Device.h:6,
+                 from /home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/torch/include/ATen/core/TensorBody.h:12,
+                 from /home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/torch/include/ATen/core/Tensor.h:4,
+                 from /home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/torch/include/ATen/Tensor.h:4,
+                 from /home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/torch/include/torch/csrc/autograd/function_hook.h:4,
+                 from /home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/torch/include/torch/csrc/autograd/cpp_hook.h:3,
+                 from /home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/torch/include/torch/csrc/autograd/variable.h:7,
+                 from /home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/torch/include/torch/csrc/autograd/autograd.h:4,
+                 from /home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/torch/include/torch/csrc/api/include/torch/autograd.h:4,
+                 from /home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/torch/include/torch/csrc/api/include/torch/all.h:8,
+                 from /home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/torch/include/torch/csrc/api/include/torch/torch.h:4,
+                 from /home/chenzhuoyan/Skeleton-anonymization/model/Temporal_shift/cuda/shift_cuda.cpp:1:
+/home/chenzhuoyan/Skeleton-anonymization/model/Temporal_shift/cuda/shift_cuda.cpp: In function ‘at::Tensor shift_forward(at::Tensor, at::Tensor, at::Tensor, int)’:
+/home/chenzhuoyan/Skeleton-anonymization/model/Temporal_shift/cuda/shift_cuda.cpp:15:40: warning: ‘at::DeprecatedTypeProperties& at::Tensor::type() const’ is deprecated: Tensor.type() is deprecated. Instead use Tensor.options(), which in many cases (e.g. in a constructor) is a drop-in replacement. If you were using data from type(), that is now available from Tensor itself, so instead of tensor.type().scalar_type(), use tensor.scalar_type() instead and instead of tensor.type().backend() use tensor.device(). [-Wdeprecated-declarations]
+   15 | #define CHECK_CUDA(x) AT_ASSERTM(x.type().is_cuda(), #x " must be a CUDA tensor")
+      |                                        ^
+/home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/torch/include/c10/util/Exception.h:374:39: note: in definition of macro ‘C10_EXPAND_MSVC_WORKAROUND’
+  374 | #define C10_EXPAND_MSVC_WORKAROUND(x) x
+      |                                       ^
+/home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/torch/include/torch/headeronly/util/Exception.h:28:34: note: in expansion of macro ‘C10_UNLIKELY’
+   28 | #define C10_UNLIKELY_OR_CONST(e) C10_UNLIKELY(e)
+      |                                  ^~~~~~~~~~~~
+/home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/torch/include/c10/util/Exception.h:431:7: note: in expansion of macro ‘C10_UNLIKELY_OR_CONST’
+  431 |   if (C10_UNLIKELY_OR_CONST(!(cond))) {                                          \
+      |       ^~~~~~~~~~~~~~~~~~~~~
+/home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/torch/include/c10/util/Exception.h:858:32: note: in expansion of macro ‘TORCH_INTERNAL_ASSERT’
+  858 |     C10_EXPAND_MSVC_WORKAROUND(TORCH_INTERNAL_ASSERT(cond, __VA_ARGS__)); \
+      |                                ^~~~~~~~~~~~~~~~~~~~~
+/home/chenzhuoyan/Skeleton-anonymization/model/Temporal_shift/cuda/shift_cuda.cpp:15:23: note: in expansion of macro ‘AT_ASSERTM’
+   15 | #define CHECK_CUDA(x) AT_ASSERTM(x.type().is_cuda(), #x " must be a CUDA tensor")
+      |                       ^~~~~~~~~~
+/home/chenzhuoyan/Skeleton-anonymization/model/Temporal_shift/cuda/shift_cuda.cpp:17:24: note: in expansion of macro ‘CHECK_CUDA’
+   17 | #define CHECK_INPUT(x) CHECK_CUDA(x); CHECK_CONTIGUOUS(x)
+      |                        ^~~~~~~~~~
+/home/chenzhuoyan/Skeleton-anonymization/model/Temporal_shift/cuda/shift_cuda.cpp:21:3: note: in expansion of macro ‘CHECK_INPUT’
+   21 |   CHECK_INPUT(input);
+      |   ^~~~~~~~~~~
+/home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/torch/include/ATen/core/TensorBody.h:229:30: note: declared here
+  229 |   DeprecatedTypeProperties & type() const {
+      |                              ^~~~
+/home/chenzhuoyan/Skeleton-anonymization/model/Temporal_shift/cuda/shift_cuda.cpp: In function ‘std::vector<at::Tensor> shift_backward(at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, int)’:
+/home/chenzhuoyan/Skeleton-anonymization/model/Temporal_shift/cuda/shift_cuda.cpp:15:40: warning: ‘at::DeprecatedTypeProperties& at::Tensor::type() const’ is deprecated: Tensor.type() is deprecated. Instead use Tensor.options(), which in many cases (e.g. in a constructor) is a drop-in replacement. If you were using data from type(), that is now available from Tensor itself, so instead of tensor.type().scalar_type(), use tensor.scalar_type() instead and instead of tensor.type().backend() use tensor.device(). [-Wdeprecated-declarations]
+   15 | #define CHECK_CUDA(x) AT_ASSERTM(x.type().is_cuda(), #x " must be a CUDA tensor")
+      |                                        ^
+/home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/torch/include/c10/util/Exception.h:374:39: note: in definition of macro ‘C10_EXPAND_MSVC_WORKAROUND’
+  374 | #define C10_EXPAND_MSVC_WORKAROUND(x) x
+      |                                       ^
+/home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/torch/include/torch/headeronly/util/Exception.h:28:34: note: in expansion of macro ‘C10_UNLIKELY’
+   28 | #define C10_UNLIKELY_OR_CONST(e) C10_UNLIKELY(e)
+      |                                  ^~~~~~~~~~~~
+/home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/torch/include/c10/util/Exception.h:431:7: note: in expansion of macro ‘C10_UNLIKELY_OR_CONST’
+  431 |   if (C10_UNLIKELY_OR_CONST(!(cond))) {                                          \
+      |       ^~~~~~~~~~~~~~~~~~~~~
+/home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/torch/include/c10/util/Exception.h:858:32: note: in expansion of macro ‘TORCH_INTERNAL_ASSERT’
+  858 |     C10_EXPAND_MSVC_WORKAROUND(TORCH_INTERNAL_ASSERT(cond, __VA_ARGS__)); \
+      |                                ^~~~~~~~~~~~~~~~~~~~~
+/home/chenzhuoyan/Skeleton-anonymization/model/Temporal_shift/cuda/shift_cuda.cpp:15:23: note: in expansion of macro ‘AT_ASSERTM’
+   15 | #define CHECK_CUDA(x) AT_ASSERTM(x.type().is_cuda(), #x " must be a CUDA tensor")
+      |                       ^~~~~~~~~~
+/home/chenzhuoyan/Skeleton-anonymization/model/Temporal_shift/cuda/shift_cuda.cpp:17:24: note: in expansion of macro ‘CHECK_CUDA’
+   17 | #define CHECK_INPUT(x) CHECK_CUDA(x); CHECK_CONTIGUOUS(x)
+      |                        ^~~~~~~~~~
+/home/chenzhuoyan/Skeleton-anonymization/model/Temporal_shift/cuda/shift_cuda.cpp:33:3: note: in expansion of macro ‘CHECK_INPUT’
+   33 |   CHECK_INPUT(grad_output);
+      |   ^~~~~~~~~~~
+/home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/torch/include/ATen/core/TensorBody.h:229:30: note: declared here
+  229 |   DeprecatedTypeProperties & type() const {
+      |                              ^~~~
+/home/chenzhuoyan/Skeleton-anonymization/model/Temporal_shift/cuda/shift_cuda.cpp:15:40: warning: ‘at::DeprecatedTypeProperties& at::Tensor::type() const’ is deprecated: Tensor.type() is deprecated. Instead use Tensor.options(), which in many cases (e.g. in a constructor) is a drop-in replacement. If you were using data from type(), that is now available from Tensor itself, so instead of tensor.type().scalar_type(), use tensor.scalar_type() instead and instead of tensor.type().backend() use tensor.device(). [-Wdeprecated-declarations]
+   15 | #define CHECK_CUDA(x) AT_ASSERTM(x.type().is_cuda(), #x " must be a CUDA tensor")
+      |                                        ^
+/home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/torch/include/c10/util/Exception.h:374:39: note: in definition of macro ‘C10_EXPAND_MSVC_WORKAROUND’
+  374 | #define C10_EXPAND_MSVC_WORKAROUND(x) x
+      |                                       ^
+/home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/torch/include/torch/headeronly/util/Exception.h:28:34: note: in expansion of macro ‘C10_UNLIKELY’
+   28 | #define C10_UNLIKELY_OR_CONST(e) C10_UNLIKELY(e)
+      |                                  ^~~~~~~~~~~~
+/home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/torch/include/c10/util/Exception.h:431:7: note: in expansion of macro ‘C10_UNLIKELY_OR_CONST’
+  431 |   if (C10_UNLIKELY_OR_CONST(!(cond))) {                                          \
+      |       ^~~~~~~~~~~~~~~~~~~~~
+/home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/torch/include/c10/util/Exception.h:858:32: note: in expansion of macro ‘TORCH_INTERNAL_ASSERT’
+  858 |     C10_EXPAND_MSVC_WORKAROUND(TORCH_INTERNAL_ASSERT(cond, __VA_ARGS__)); \
+      |                                ^~~~~~~~~~~~~~~~~~~~~
+/home/chenzhuoyan/Skeleton-anonymization/model/Temporal_shift/cuda/shift_cuda.cpp:15:23: note: in expansion of macro ‘AT_ASSERTM’
+   15 | #define CHECK_CUDA(x) AT_ASSERTM(x.type().is_cuda(), #x " must be a CUDA tensor")
+      |                       ^~~~~~~~~~
+/home/chenzhuoyan/Skeleton-anonymization/model/Temporal_shift/cuda/shift_cuda.cpp:17:24: note: in expansion of macro ‘CHECK_CUDA’
+   17 | #define CHECK_INPUT(x) CHECK_CUDA(x); CHECK_CONTIGUOUS(x)
+      |                        ^~~~~~~~~~
+/home/chenzhuoyan/Skeleton-anonymization/model/Temporal_shift/cuda/shift_cuda.cpp:34:3: note: in expansion of macro ‘CHECK_INPUT’
+   34 |   CHECK_INPUT(output);
+      |   ^~~~~~~~~~~
+/home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/torch/include/ATen/core/TensorBody.h:229:30: note: declared here
+  229 |   DeprecatedTypeProperties & type() const {
+      |                              ^~~~
+ninja: build stopped: subcommand failed.
+Traceback (most recent call last):
+  File "/home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/torch/utils/cpp_extension.py", line 2693, in _run_ninja_build
+    subprocess.run(
+  File "/home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['ninja', '-v']' returned non-zero exit status 1.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/chenzhuoyan/Skeleton-anonymization/model/Temporal_shift/cuda/setup.py", line 4, in <module>
+    setup(
+  File "/home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/setuptools/__init__.py", line 117, in setup
+    return distutils.core.setup(**attrs)  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/setuptools/_distutils/core.py", line 186, in setup
+    return run_commands(dist)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/setuptools/_distutils/core.py", line 202, in run_commands
+    dist.run_commands()
+  File "/home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/setuptools/_distutils/dist.py", line 1002, in run_commands
+    self.run_command(cmd)
+  File "/home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/setuptools/dist.py", line 1107, in run_command
+    super().run_command(command)
+  File "/home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/setuptools/_distutils/dist.py", line 1021, in run_command
+    cmd_obj.run()
+  File "/home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/setuptools/_distutils/command/install.py", line 689, in run
+    self.run_command('build')
+  File "/home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/setuptools/_distutils/cmd.py", line 357, in run_command
+    self.distribution.run_command(command)
+  File "/home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/setuptools/dist.py", line 1107, in run_command
+    super().run_command(command)
+  File "/home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/setuptools/_distutils/dist.py", line 1021, in run_command
+    cmd_obj.run()
+  File "/home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/setuptools/_distutils/command/build.py", line 135, in run
+    self.run_command(cmd_name)
+  File "/home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/setuptools/_distutils/cmd.py", line 357, in run_command
+    self.distribution.run_command(command)
+  File "/home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/setuptools/dist.py", line 1107, in run_command
+    super().run_command(command)
+  File "/home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/setuptools/_distutils/dist.py", line 1021, in run_command
+    cmd_obj.run()
+  File "/home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/setuptools/command/build_ext.py", line 97, in run
+    _build_ext.run(self)
+  File "/home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/setuptools/_distutils/command/build_ext.py", line 368, in run
+    self.build_extensions()
+  File "/home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/torch/utils/cpp_extension.py", line 1143, in build_extensions
+    build_ext.build_extensions(self)
+  File "/home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/setuptools/_distutils/command/build_ext.py", line 484, in build_extensions
+    self._build_extensions_serial()
+  File "/home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/setuptools/_distutils/command/build_ext.py", line 510, in _build_extensions_serial
+    self.build_extension(ext)
+  File "/home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/setuptools/command/build_ext.py", line 262, in build_extension
+    _build_ext.build_extension(self, ext)
+  File "/home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/setuptools/_distutils/command/build_ext.py", line 565, in build_extension
+    objects = self.compiler.compile(
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/torch/utils/cpp_extension.py", line 900, in unix_wrap_ninja_compile
+    _write_ninja_file_and_compile_objects(
+  File "/home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/torch/utils/cpp_extension.py", line 2297, in _write_ninja_file_and_compile_objects
+    _run_ninja_build(
+  File "/home/chenzhuoyan/.conda/envs/Skeleton/lib/python3.11/site-packages/torch/utils/cpp_extension.py", line 2710, in _run_ninja_build
+    raise RuntimeError(message) from e
+RuntimeError: Error compiling objects for extension
+Traceback (most recent call last):
+  File "/home/chenzhuoyan/Skeleton-anonymization/model/Temporal_shift/demo.py", line 10, in <module>
+    from cuda.shift import ShiftFunction,Shift
+ModuleNotFoundError: No module named 'cuda.shift'
+(Skeleton) chenzhuoyan@qwe-AS-4125GS-TNRT:~/Skeleton-anonymization/model/Temporal_shift$ pip install shift-cuda-linear-cpp
+ERROR: Could not find a version that satisfies the requirement shift-cuda-linear-cpp (from versions: none)
+ERROR: No matching distribution found for shift-cuda-linear-cpp
