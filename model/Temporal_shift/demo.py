@@ -3,11 +3,14 @@ from __future__ import print_function
 
 import argparse
 import torch
+import os
+import sys
 
 import torch.nn as nn
 from torch.autograd import Variable, gradcheck
 
-from cuda.shift import ShiftFunction,Shift
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'cuda'))
+from shift import ShiftFunction,Shift
 
 
 shift_layer = Shift(channel=5,stride=2)
