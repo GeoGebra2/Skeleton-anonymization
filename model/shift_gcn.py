@@ -6,9 +6,9 @@ import numpy as np
 import math
 
 import sys
-sys.path.append("./model/Temporal_shift/")
-
-from cuda.shift import Shift
+import os
+sys.path.append(os.path.join(os.path.dirname(__file__), "Temporal_shift", "cuda"))
+from shift import Shift
 
 
 def import_class(name):
